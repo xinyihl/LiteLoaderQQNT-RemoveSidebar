@@ -1,0 +1,24 @@
+{
+    "manifest_version": 1,
+    "type": "extension",
+    "name": "自定义移除侧栏",
+    "slug": "remove_sidebar",
+    "description": "通过序号自定义移除主页的侧栏",
+    "version": "0.1.0",
+    "author": [
+        {
+            "name": "xinyihl",
+            "link": "https://github.com/xinyihl"
+        }
+    ],
+    "platform": [
+        "win32",
+        "linux",
+        "darwin"
+    ],
+    "injects": {
+        "renderer": "./src/renderer.js",
+        "main": "./src/main.js",
+        "preload": "./src/preload.js"
+    }
+}

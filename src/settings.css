@@ -1,0 +1,109 @@
+/* 通用 */
+.remove_sidebar {
+    margin: 20px;
+}
+
+.remove_sidebar h1 {
+    color: var(--text_primary);
+    font-weight: var(--font-bold);
+    font-size: min(var(--font_size_3), 18px);
+    line-height: min(var(--line_height_3), 24px);
+    padding: 0px 16px;
+    margin-bottom: 8px;
+}
+
+.remove_sidebar .wrap {
+    background-color: var(--fill_light_primary, var(--fg_white));
+    border-radius: 8px;
+    font-size: min(var(--font_size_3), 18px);
+    line-height: min(var(--line_height_3), 24px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 0px 16px;
+}
+
+.remove_sidebar .vertical-list-item {
+    margin: 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove_sidebar .horizontal-dividing-line {
+    border: unset;
+    margin: unset;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.remove_sidebar .vertical-dividing-line {
+    border: unset;
+    margin: unset;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.remove_sidebar .ops-btns {
+    display: flex;
+}
+
+.remove_sidebar .hidden {
+    display: none !important;
+}
+
+.remove_sidebar .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.remove_sidebar .secondary-text {
+    color: var(--text_secondary);
+    font-size: min(var(--font_size_2), 16px);
+    line-height: min(var(--line_height_2), 22px);
+    margin-top: 4px;
+}
+
+.remove_sidebar .wrap .title {
+    cursor: pointer;
+    font-size: min(var(--font_size_3), 18px);
+    line-height: min(var(--line_height_3), 24px);
+}
+
+.remove_sidebar .wrap .title svg {
+    width: 1em;
+    height: 1em;
+    transform: rotate(-180deg);
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+}
+
+.remove_sidebar .wrap .title svg.is-fold {
+    transform: rotate(0deg);
+}
+
+.remove_sidebar .sett .remove-input {
+    align-self: normal;
+    flex: 1;
+    border-radius: 4px;
+    margin-right: 16px;
+    transition: all 100ms ease-out;
+}
+
+.remove_sidebar .sett .remove-input:focus {
+    padding-left: 5px;
+    background-color: rgba(127, 127, 127, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+    .text_color {
+        color: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .text_color {
+        color: white;
+    }
+}
