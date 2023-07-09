@@ -20,7 +20,7 @@ async function onLoad() {
 }
 
 async function onConfigView(view) {
-    const plugin_path = betterQQNT.plugins.remove_sidebar.path.plugin;
+    const plugin_path = LiteLoader.plugins.remove_sidebar.path.plugin;
     const css_file_path = `file:///${plugin_path}/src/settings.css`;
     const html_file_path = `file:///${plugin_path}/src/settings.html`;
 
