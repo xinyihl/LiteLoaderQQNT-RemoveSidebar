@@ -16,7 +16,7 @@ async function onLoad() {
         }
         clearInterval(interval);
     }
-  }， 100);
+  }, 100);
 }
 
 async function onConfigView(view) {
@@ -40,7 +40,7 @@ async function onConfigView(view) {
     p.value = settings.remove;
 
     const s = view.querySelector(".apply");
-    s.addEventListener("click"， event => {
+    s.addEventListener("click", event => {
         //console.log("test",p.value);
         settings.remove = p.value;
         remove_sidebar.setSettings(settings);
