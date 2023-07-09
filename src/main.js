@@ -2,20 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const { BrowserWindow, ipcMain } = require("electron");
 
-function debounce(fn, time) {
-    let timer = null;
-    return function (...args) {
-        timer && clearTimeout(timer);
-        timer = setTimeout(() => {
-            fn.apply(this, args);
-        }, time);
-    }
-}
-
-function watchSettingsChange(webContents, settingsPath) {
-//热更新预留
-}
-
 function onLoad(plugin, liteloader) {
     const pluginDataPath = plugin.path.data;
     const settingsPath = path.join(pluginDataPath, "settings.json");
@@ -28,14 +14,6 @@ function onLoad(plugin, liteloader) {
             "remove": "",
         }));
     }
-
-    ipcMain.on(
-        "betterQQNT.remove_sidebar.watchSettingsChange",
-        (event, settingsPath) => {
-            const window = BrowserWindow.fromWebContents(event.sender);
-            watchSettingsChange(window.webContents, settingsPath);
-        }
-    );
 
     ipcMain.handle(
         "betterQQNT.remove_sidebar.getSettings",
@@ -62,21 +40,8 @@ function onLoad(plugin, liteloader) {
             }
         }
     );
-
-}
-
-function onBrowserWindowCreated(window, plugin) {
-    const pluginDataPath = plugin.path.data;
-    const settingsPath = path.join(pluginDataPath, "settings.json");
-    window.on("ready-to-show", () => {
-        const url = window.webContents.getURL();
-        if (url.includes("app://./renderer/index.html")) {
-            watchSettingsChange(window.webContents, settingsPath);
-        }
-    });
 }
 
 module.exports = {
-    onLoad,
-    onBrowserWindowCreated
+    onLoad
 }
