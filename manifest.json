@@ -13,8 +13,7 @@
     ],
     "platform": [
         "win32",
-        "linux",
-        "darwin"
+        "linux"
     ],
     "injects": {
         "renderer": "./src/renderer.js",

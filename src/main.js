@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { BrowserWindow, ipcMain } = require("electron");
+const { ipcMain } = require("electron");
 
 function onLoad(plugin, liteloader) {
     const pluginDataPath = plugin.path.data;
@@ -16,7 +16,7 @@ function onLoad(plugin, liteloader) {
     }
 
     ipcMain.handle(
-        "betterQQNT.remove_sidebar.getSettings",
+        "LiteLoader.remove_sidebar.getSettings",
         (event, message) => {
             try {
                 const data = fs.readFileSync(settingsPath, "utf-8");
@@ -30,7 +30,7 @@ function onLoad(plugin, liteloader) {
     );
 
     ipcMain.handle(
-        "betterQQNT.remove_sidebar.setSettings",
+        "LiteLoader.remove_sidebar.setSettings",
         (event, content) => {
             try {
                 const new_config = JSON.stringify(content);
@@ -40,7 +40,9 @@ function onLoad(plugin, liteloader) {
             }
         }
     );
+
 }
+
 
 module.exports = {
     onLoad
