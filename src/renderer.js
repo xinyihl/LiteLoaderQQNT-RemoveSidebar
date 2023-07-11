@@ -5,7 +5,7 @@ async function onLoad() {
     if (LiteLoader.os.platform == "win32") {
         var buttons = document.querySelectorAll(".sidebar-nav .nav-item");
     }
-    if (LiteLoader.os.platform == "linux") {
+    if (LiteLoader.os.platform == "linux" || LiteLoader.os.platform == "darwin") {
         var buttons = document.querySelectorAll(".sidebar .nav-item");
     }
     if (buttons.length > 2) {
