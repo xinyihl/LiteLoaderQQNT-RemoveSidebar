@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { ipcMain } = require("electron");
+const { ipcMain, Menu  } = require("electron");
 
 function onLoad(plugin, liteloader) {
     const pluginDataPath = plugin.path.data;
@@ -44,7 +44,19 @@ function onLoad(plugin, liteloader) {
 
 }
 
+function onBrowserWindowCreated(window, plugin) {
+    //F5刷新页面
+    var menuTemplate=[{
+        label: "刷新",
+        role: "reload",
+        accelerator: "F5",
+    }]
+
+    var menuBuilder = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(menuBuilder);
+}
 
 module.exports = {
-    onLoad
+    onLoad,
+    onBrowserWindowCreated
 }
