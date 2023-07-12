@@ -12,6 +12,7 @@ function onLoad(plugin, liteloader) {
     if (!fs.existsSync(settingsPath)) {
         fs.writeFileSync(settingsPath, JSON.stringify({
             "remove": "",
+            "badgered": false
         }));
     }
 

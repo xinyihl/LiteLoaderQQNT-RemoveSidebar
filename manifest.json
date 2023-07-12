@@ -4,7 +4,7 @@
     "name": "自定义移除侧栏",
     "slug": "remove_sidebar",
     "description": "通过序号自定义移除主页的侧栏",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "author": [
         {
             "name": "xinyihl",
@@ -13,7 +13,8 @@
     ],
     "platform": [
         "win32",
-        "linux"
+        "linux",
+        "darwin"
     ],
     "injects": {
         "renderer": "./src/renderer.js",
