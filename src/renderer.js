@@ -11,6 +11,7 @@ async function onLoad() {
     if (buttons.length > 2) {
         for(let item of arr) {
             console.log(item);
+            if(!item) return;
             const lastButton = buttons[item-1];
             lastButton.parentNode.removeChild(lastButton);
         }
