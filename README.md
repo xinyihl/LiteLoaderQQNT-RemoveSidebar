@@ -7,6 +7,9 @@
 ### 使用方法
 `git clone`或下载zip文件解压，将文件夹移动至`BetterQQNT数据目录/plugins/`下面，重启QQNT或者打开控制台按下 `Ctrl+R` 刷新一下即可
 
+### 注意
+本插件适配LiteLoaderQQNT最新开发版旧版本可能无法工作
+
 ### 鸣谢
 感谢[LiteLoaderQQNT](https://github.com/mo-jinran/LiteLoaderQQNT) 框架
 
