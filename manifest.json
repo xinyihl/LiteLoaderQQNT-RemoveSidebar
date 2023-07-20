@@ -1,5 +1,5 @@
 {
-    "manifest_version": 1,
+    "manifest_version": 2,
     "type": "extension",
     "name": "自定义移除侧栏",
     "slug": "remove_sidebar",
@@ -11,6 +11,10 @@
             "link": "https://github.com/xinyihl"
         }
     ],
+    "repository": {
+    "repo": "xinyihl/LiteLoaderQQNT-RemoveSidebar",
+    "branch": "main"
+  },
     "platform": [
         "win32",
         "linux",
