@@ -39,6 +39,7 @@ async function onLoad() {
 
 async function onConfigView(view) {
     const plugin_path = LiteLoader.plugins.remove_sidebar.path.plugin;
+    const settings = await remove_sidebar.getSettings();
     const css_file_path = `file:///${plugin_path}/src/settings.css`;
     const html_file_path = `file:///${plugin_path}/src/settings.html`;
 
@@ -55,36 +56,36 @@ async function onConfigView(view) {
     doc.querySelectorAll("section").forEach(node => view.appendChild(node));
 
     //侧栏移除
-    const settings = await remove_sidebar.getSettings();
-
     const p = view.querySelector(".remove-input");
     p.value = settings.remove;
-
+    
     const s = view.querySelector(".apply");
     s.addEventListener("click", event => {
         settings.remove = p.value;
         remove_sidebar.setSettings(settings);
+        //remove_sidebar.reloadmainWindow(); 修改为监听配置文件方式
     });
 
     //红点移除
     const q_switch = view.querySelector(".q-switch");
     if (settings.badgered) {
-        q_switch.classList.remove("is-active");
+        q_switch.classList.toggle("is-active");
     }
     else {
-        q_switch.classList.toggle("is-active");
+        q_switch.classList.remove("is-active");
     }
     q_switch.addEventListener("click", async () => {
         console.log(settings.badgered);
         if (settings.badgered) {
-            q_switch.classList.toggle("is-active");
+            q_switch.classList.remove("is-active");
             settings.badgered = false;
         }
         else {
-            q_switch.classList.remove("is-active");
+            q_switch.classList.toggle("is-active");
             settings.badgered = true;
         }
         remove_sidebar.setSettings(settings);
+        //remove_sidebar.reloadmainWindow(); 修改为监听配置文件方式
     });
 }
 

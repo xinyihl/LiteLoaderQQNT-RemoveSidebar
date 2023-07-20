@@ -26,16 +26,6 @@
     margin-bottom: 0px;
 }
 
-.wrap>span {
-    float: right;
-    font-size: 12px;
-    margin: 6px;
-}
-
-.wrap>span>a {
-    color: var(--hover-link);
-}
-
 .liteloader .vertical-list-item.bottom-box {
     margin-top: 3px;
 }
