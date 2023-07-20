@@ -69,19 +69,19 @@ async function onConfigView(view) {
     //红点移除
     const q_switch = view.querySelector(".q-switch");
     if (settings.badgered) {
-        q_switch.classList.toggle("is-active");
+        q_switch.classList.remove("is-active");
     }
     else {
-        q_switch.classList.remove("is-active");
+        q_switch.classList.toggle("is-active");
     }
     q_switch.addEventListener("click", async () => {
         console.log(settings.badgered);
         if (settings.badgered) {
-            q_switch.classList.remove("is-active");
+            q_switch.classList.toggle("is-active");
             settings.badgered = false;
         }
         else {
-            q_switch.classList.toggle("is-active");
+            q_switch.classList.remove("is-active");
             settings.badgered = true;
         }
         remove_sidebar.setSettings(settings);
