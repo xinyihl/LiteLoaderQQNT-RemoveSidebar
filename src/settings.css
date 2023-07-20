@@ -19,11 +19,17 @@
     margin-top: 6px;
 }
 
-.wrap div span {
+.wrap>div>span {
     font-size: 12px;
     font-weight: var(--font-bold);
     line-height: 16px;
     margin-bottom: 0px;
+}
+
+.wrap>span {
+    float: right;
+    font-size: 12px;
+    margin: 6px;
 }
 
 .liteloader .vertical-list-item.bottom-box {
