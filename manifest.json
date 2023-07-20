@@ -5,6 +5,7 @@
     "slug": "remove_sidebar",
     "description": "通过序号自定义移除主页的侧栏",
     "version": "0.1.2",
+    "thumbnail": "./icon.png",
     "author": [
         {
             "name": "xinyihl",
