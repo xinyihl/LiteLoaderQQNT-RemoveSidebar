@@ -32,6 +32,10 @@
     margin: 6px;
 }
 
+.wrap>span>a {
+    color: var(--hover-link);
+}
+
 .liteloader .vertical-list-item.bottom-box {
     margin-top: 3px;
 }
