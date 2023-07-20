@@ -5,6 +5,7 @@ _为什么会有这个插件，虽然有别的删除侧栏插件但都只针对�
 ### 功能
 - 通过设置形如`1,2,3`的数组删除对应序号的侧栏
 - 移除侧栏的消息提醒红点
+- F5刷新分离至[LiteLoaderQQNT-JustF5](https://github.com/xinyihl/LiteLoaderQQNT-JustF5)或自选解除对应代码注释
 
 ### 使用方法
 1. `git clone`或`下载zip文件`解压
