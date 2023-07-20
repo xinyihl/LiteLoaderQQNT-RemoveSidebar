@@ -45,6 +45,7 @@ function onLoad(plugin, liteloader) {
 }
 
 function onBrowserWindowCreated(window, plugin) {
+/**
     //F5刷新页面
     var menuTemplate=[{
         label: "刷新",
@@ -54,6 +55,7 @@ function onBrowserWindowCreated(window, plugin) {
 
     var menuBuilder = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menuBuilder);
+**/
 }
 
 module.exports = {
