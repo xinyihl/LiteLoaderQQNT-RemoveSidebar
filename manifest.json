@@ -4,7 +4,7 @@
     "name": "自定义主页侧栏",
     "slug": "remove_sidebar",
     "description": "通过序号移除主页的侧栏&移除侧栏提醒红点",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "thumbnail": "./icon.png",
     "author": [
         {
