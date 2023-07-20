@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "type": "extension",
-    "name": "自定义移除侧栏",
+    "name": "自定义主页侧栏",
     "slug": "remove_sidebar",
-    "description": "通过序号自定义移除主页的侧栏",
+    "description": "通过序号移除主页的侧栏&移除侧栏提醒红点",
     "version": "0.1.2",
     "thumbnail": "./icon.png",
     "author": [
