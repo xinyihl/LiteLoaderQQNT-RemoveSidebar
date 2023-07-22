@@ -2,39 +2,75 @@ async function onLoad() {
     const settings = await remove_sidebar.getSettings();
     const arr = settings.remove.split(',');
 
-    //移除侧栏
-    const interval = setInterval(() => {
-    if (LiteLoader.os.platform == "win32") {
-        var buttons = document.querySelectorAll(".sidebar-nav .nav-item");
-    }
-    if (LiteLoader.os.platform == "linux" || LiteLoader.os.platform == "darwin") {
-        var buttons = document.querySelectorAll(".sidebar .nav-item");
-    }
-    if (buttons.length > 2) {
-        for(let item of arr) {
-            if(!item) return;
-            const lastButton = buttons[item-1];
-            lastButton.parentNode.removeChild(lastButton);
+    // 顶部索引
+    const positiveArr = arr.reduce((positive, item) => {
+        if (item > 0) {
+            positive.push(item);
         }
-        clearInterval(interval);
-    }
-  }, 100);
+        return positive;
+    }, []);
 
-  //移除红点
-  const red = setInterval(() => {
-    var badgereds = document.querySelectorAll(".nav-item .q-badge-sub");
-    if (settings.badgered) {
-        for(var i=0,len=badgereds.length; i<len; i++){
-            badgereds[i].remove();
+    // 底部索引
+    const negativeArr = arr.reduce((negative, item) => {
+        if (item < 0) {
+            negative.push(item);
         }
-    }
-  }, 100);
+        return negative;
+    }, []);
 
-  //10s后关闭定时器
-  const removeinterval = setTimeout(() => {
-    clearInterval(red);
-    clearInterval(interval);
-  }, 10000);
+    // 移除顶部侧栏
+    const intervalTop = setInterval(() => {
+        if (LiteLoader.os.platform == "win32") {
+            var buttons = document.querySelectorAll(".sidebar-nav .nav-item");
+        }
+        if (LiteLoader.os.platform == "linux" || LiteLoader.os.platform == "darwin") {
+            var buttons = document.querySelectorAll(".sidebar .nav-item");
+        }
+        if (buttons.length > 2) {
+            for (let item of positiveArr) {
+                if (!item) return;
+                const lastButton = buttons[item - 1];
+                lastButton.parentNode.removeChild(lastButton);
+            }
+            clearInterval(intervalTop);
+        }
+    }, 100);
+
+    // 移除底部侧栏
+    const intervalBottom = setInterval(() => {
+        if (LiteLoader.os.platform == "win32") {
+            var buttons = document.querySelectorAll(".func-menu.sidebar__menu .func-menu__item");
+        }
+        // 不清楚其他系统对应的类名
+        // if (LiteLoader.os.platform == "linux" || LiteLoader.os.platform == "darwin") {
+        //     var buttons = document.querySelectorAll(".sidebar .nav-item");
+        // }
+        if (buttons.length > 2) {
+            for (let item of negativeArr) {
+                if (!item) return;
+                const lastButton = buttons[-item - 1];
+                lastButton.parentNode.removeChild(lastButton);
+            }
+            clearInterval(intervalBottom);
+        }
+    }, 100);
+
+    //移除红点
+    const red = setInterval(() => {
+        var badgereds = document.querySelectorAll(".nav-item .q-badge-sub");
+        if (settings.badgered) {
+            for (var i = 0, len = badgereds.length; i < len; i++) {
+                badgereds[i].remove();
+            }
+        }
+    }, 100);
+
+    //10s后关闭定时器
+    const removeinterval = setTimeout(() => {
+        clearInterval(red);
+        clearInterval(intervalTop);
+        clearInterval(intervalBottom);
+    }, 10000);
 }
 
 async function onConfigView(view) {
@@ -58,7 +94,7 @@ async function onConfigView(view) {
     //侧栏移除
     const p = view.querySelector(".remove-input");
     p.value = settings.remove;
-    
+
     const s = view.querySelector(".apply");
     s.addEventListener("click", event => {
         settings.remove = p.value;
