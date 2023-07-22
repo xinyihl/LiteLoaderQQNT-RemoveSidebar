@@ -3,7 +3,7 @@
     "type": "extension",
     "name": "自定义主页侧栏",
     "slug": "remove_sidebar",
-    "description": "通过序号移除主页的侧栏&移除侧栏提醒红点<br>插件停止维护推荐使用其他相同功能插件例如轻量工具箱",
+    "description": "插件停止维护推荐使用其他相同功能插件 例如[轻量工具箱]",
     "version": "0.1.4",
     "thumbnail": "./icon.png",
     "author": [
