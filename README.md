@@ -3,10 +3,9 @@
 > ### 发现社区对该插件的功能拥有了更好的实现方式，目前该插件停止维护。
 
 ### 功能
-- 通过设置形如`-2,-1,1,2,3`的数组删除对应序号的侧栏（负数绝对值对应底部侧栏）
-  [ 推荐 --> [轻量工具箱](https://github.com/xiyuesaves/lite_tools) ]
-- 移除侧栏的消息提醒红点 [暂未发现其他已实现该功能的插件]
-- ~~F5刷新~~ (已实现配置文件变动监听该功能已移除)  如需要该功能请前往[LiteLoaderQQNT-JustF5](https://github.com/xinyihl/LiteLoaderQQNT-JustF5)
+- 通过设置形如`-2,-1,1,2,3`的数组删除对应序号的侧栏（负数绝对值对应底部侧栏）  [ 推荐 --> [轻量工具箱](https://github.com/xiyuesaves/lite_tools) ]
+- 移除侧栏的消息提醒红点  [ 推荐 --> [轻量工具箱](https://github.com/xiyuesaves/lite_tools) ]
+- ~~F5刷新~~(已移除)  如需要该功能请前往[LiteLoaderQQNT-JustF5](https://github.com/xinyihl/LiteLoaderQQNT-JustF5)
 
 ### 使用方法
 1. `git clone`或`下载zip文件`解压
